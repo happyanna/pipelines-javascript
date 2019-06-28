@@ -14,8 +14,15 @@ steps:
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
+- task: CmdLine@1
+  inputs:
+    filename: "notepad.exe"
+    arguments: 'Node --version'
+  displayName: 'open notepad'
 
 - script: |
     npm install
     npm run build
   displayName: 'npm install and build'
+- script: echo hello world
+  displayName: 'greeting hello world'
